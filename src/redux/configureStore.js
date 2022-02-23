@@ -1,6 +1,11 @@
-import { createStore } from 'redux';
-import reducers from './books/reducers/index';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import booksReducer from './books/books';
 
-const store = createStore(reducers, {});
+const reducer = combineReducers({
+  booksReducer,
+});
+
+const store = createStore(reducer, applyMiddleware(logger));
 
 export default store;
