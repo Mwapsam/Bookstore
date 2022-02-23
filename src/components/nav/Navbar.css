@@ -1,0 +1,46 @@
+* {
+  --bubble-gum-pink: #ff5ab7;
+  --black: #1e1e1e;
+  --pinkish-grey: #c4c4c4;
+  --black-two: #121212;
+  --white-two: #e8e8e8;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.panel-bg {
+  display: flex;
+  align-items: center;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
+}
+
+.fa {
+  color: #0290ff;
+  font-size: 25px;
+}
+
+.Bookstore-CMS {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  padding: 7px 10px;
+  border-radius: 25px;
+  text-align: center;
+}
