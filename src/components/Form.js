@@ -7,30 +7,39 @@ import './styles/form.css';
 const Form = () => {
   const dispatch = useDispatch();
 
-  const bookStore = () => ({
-    id: '',
-    title: '',
-    author: '',
-    category: '',
-  });
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
-  const [bookSetup, setBookSetup] = useState('');
-  const { title, author, category } = bookSetup;
-
-  const changeHandler = (event) => {
-    setBookSetup((prevState) => ({
-      ...prevState,
+  const bookStore = () => {
+    const newBook = {
       id: uuidv4(),
-      [event.target.name]: event.target.value,
-    }));
+      title,
+      author,
+      category,
+    };
+    dispatch(addBook(newBook));
   };
 
-  const formSubmitHandler = (event) => {
-    event.preventDefault();
-    if (title.trim() !== '' && author.trim() !== '') {
-      dispatch(addBook(bookSetup));
-      setBookSetup(bookStore());
-    }
+  const authorChangeHandler = (event) => {
+    setAuthor(event.target.value);
+  };
+
+  const titleChangeHandler = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const categoryChangeHandler = (event) => {
+    setCategory(event.target.value);
+  };
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    e.target.children[1].children[0].value = null;
+    e.target.children[1].children[1].value = null;
+    setTitle('');
+    setAuthor('');
+    setCategory('');
   };
 
   return (
@@ -41,37 +50,38 @@ const Form = () => {
           <input
             type="text"
             className="text"
-            name="title"
+            name={title}
             placeholder="Title"
             value={title}
             required
-            onChange={changeHandler}
+            onChange={(e) => titleChangeHandler(e)}
           />
           <input
             type="text"
-            name="author"
+            name={author}
             placeholder="Book Author"
             className="author"
             value={author}
             required
-            onChange={changeHandler}
+            onChange={(e) => authorChangeHandler(e)}
           />
           <select
-            name="category"
+            name={category}
             className="category-select"
-            defaultValue=""
             value={category}
             required
-            onChange={changeHandler}
+            onChange={(e) => categoryChangeHandler(e)}
           >
-            <option value="" hidden>
+            <option value="" disabled>
               Category
             </option>
             <option value="business">Business</option>
             <option value="fiction">Fiction</option>
             <option value="programming">Programming</option>
           </select>
-          <button type="submit">ADD BOOK</button>
+          <button type="submit" onClick={(e) => bookStore(e)}>
+            ADD BOOK
+          </button>
         </div>
       </form>
     </section>
