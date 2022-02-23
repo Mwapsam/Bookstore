@@ -17,7 +17,7 @@ The Bookstore website manages the inventory of books by allowing users to:
 
 ## Live Demo
 
-[Live Demo Link](https://bookstore-js.herokuapp.com/category)
+[Live Demo Link](https://bookstore-js.herokuapp.com/)
 
 ## Getting Started
 
