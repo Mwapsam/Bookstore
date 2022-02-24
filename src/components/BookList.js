@@ -9,9 +9,8 @@ import { removeBook } from '../redux/books/books';
 const BookList = ({ book }) => {
   const dispatch = useDispatch();
 
-  const handleClick = (event, id) => {
-    event.preventDefault();
-    dispatch(removeBook(id));
+  const handleClick = () => {
+    dispatch(removeBook(book.item_id));
   };
 
   return (
@@ -24,7 +23,7 @@ const BookList = ({ book }) => {
           <button type="button">Comments</button>
           <button
             type="button"
-            onClick={(event) => handleClick(event, book.id)}
+            onClick={handleClick}
           >
             Remove
           </button>
