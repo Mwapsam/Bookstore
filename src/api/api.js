@@ -1,6 +1,6 @@
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/xz0Alal3hWKxM6NgVoMM/books';
 
-const getData = async (url) => {
+const getData = async () => {
   try {
     const response = await fetch(url);
     return response.json();
@@ -9,7 +9,7 @@ const getData = async (url) => {
   }
 };
 
-const postData = async (url, data) => {
+const postData = async (data) => {
   try {
     const response = await fetch(url, {
       method: 'POST',
@@ -25,17 +25,10 @@ const postData = async (url, data) => {
   }
 };
 
-const deleteData = async (url, id) => {
+const deleteData = async (id) => {
   try {
-    const response = await fetch(url, {
+    const response = await fetch(`${url}/${id}`, {
       method: 'DELETE',
-      body: JSON.stringify({
-        item_id: id,
-      }),
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     });
     return await response.text();
   } catch (error) {
@@ -43,8 +36,8 @@ const deleteData = async (url, id) => {
   }
 };
 
-export const fetchBooks = async () => getData(url);
+export const fetchBooks = async () => getData();
 
-export const postBook = async (data) => postData(url, data);
+export const postBook = async (data) => postData(data);
 
-export const deleteBook = async (id) => deleteData(`${url}/${id}`);
+export const deleteBook = async (id) => deleteData(id);
