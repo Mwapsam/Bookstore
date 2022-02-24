@@ -11,7 +11,8 @@ const Form = () => {
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
-  const bookStore = () => {
+  const bookStore = (e) => {
+    e.preventDefault();
     const newBook = {
       item_id: uuidv4(),
       title,
@@ -79,7 +80,11 @@ const Form = () => {
             <option value="fiction">Fiction</option>
             <option value="programming">Programming</option>
           </select>
-          <button type="submit" onClick={(e) => bookStore(e)}>
+          <button
+            disabled={!title && !author && !category}
+            type="submit"
+            onClick={bookStore}
+          >
             ADD BOOK
           </button>
         </div>
