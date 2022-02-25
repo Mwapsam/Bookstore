@@ -59,11 +59,7 @@ const BookList = ({ book }) => {
 };
 
 BookList.propTypes = {
-  book: PropTypes.objectOf(PropTypes.any),
-};
-
-BookList.defaultProps = {
-  book: {},
+  book: PropTypes.string.isRequired,
 };
 
 export default BookList;
