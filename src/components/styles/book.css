@@ -1,5 +1,16 @@
 .divider {
   height: 0.125rem;
-  margin: 2.5rem 0.063rem 1.813rem 0;
+  margin: 20px 89px 20px 89px;
   border: solid 1px var(--border-color);
+}
+
+.main {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .scroll {
+    overflow-y: scroll;
+    height: 400px;
+  }
 }
