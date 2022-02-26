@@ -9,6 +9,11 @@
 }
 
 @media (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 10px;
+  }
+
   .scroll {
     overflow-y: scroll;
     height: 400px;

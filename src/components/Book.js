@@ -16,11 +16,11 @@ const Book = () => {
 
   return (
     <section className="main">
-      {books.map((book) => (
-        <div key={book.item_id} className="scroll">
+      <div className="scroll">
+        {books.map((book) => (
           <BookList key={book.item_id} book={book} />
-        </div>
-      ))}
+        ))}
+      </div>
       <hr className="divider" />
       <Form />
     </section>

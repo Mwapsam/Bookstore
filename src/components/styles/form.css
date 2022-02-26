@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 6%;
 }
 
 .form-inputs input {
@@ -50,16 +49,16 @@
   transition: 0.3s;
 }
 
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgb(221, 221, 221);
+}
+
 .form-inputs button:hover {
   opacity: 1;
 }
 
 @media (max-width: 768px) {
-  button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgb(221, 221, 221);
-  }
-
   .form-inputs {
     display: flex;
     flex-direction: column;
@@ -81,14 +80,11 @@
   }
 }
 
-@media (min-width) {
+@media (min-width: 768px) {
   .form {
     display: flex;
     justify-content: center;
     background-color: #fff;
-    margin: 40px;
-    padding: 40px;
-    position: fixed;
-    width: 100%;
+    align-items: center;
   }
 }
