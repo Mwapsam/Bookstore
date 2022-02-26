@@ -59,7 +59,7 @@ const BookList = ({ book }) => {
 };
 
 BookList.propTypes = {
-  book: PropTypes.objectOf(PropTypes.any),
+  book: PropTypes.objectOf(PropTypes.string),
 };
 
 BookList.defaultProps = {
