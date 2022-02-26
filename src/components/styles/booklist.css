@@ -106,9 +106,9 @@
     margin: 1.313rem 6.25rem 0;
     padding: 0.5rem 0.688rem 0.625rem 0.688rem;
     border-radius: 8px;
-    border: solid 1px var(--white-two);
+    border: solid 1px #dbdbdb;
     background-color: #fff;
-    box-shadow: 4px 4px 30px rgb(0 0 0 / 6%);
+    box-shadow: 4px 4px 30px rgba(187, 187, 187, 0.06);
   }
 
   .chapter {

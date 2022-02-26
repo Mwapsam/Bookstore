@@ -2,7 +2,7 @@
   color: #888;
   font-size: 1.25rem;
   font-weight: bold;
-  margin-left: 6%;
+  margin-bottom: 26px;
 }
 
 .form-inputs {
@@ -86,5 +86,6 @@ button:focus {
     justify-content: center;
     background-color: #fff;
     align-items: center;
+    margin: 30px;
   }
 }
