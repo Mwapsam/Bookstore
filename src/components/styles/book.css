@@ -1,5 +1,20 @@
 .divider {
   height: 0.125rem;
-  margin: 2.5rem 0.063rem 1.813rem 0;
+  margin: 20px 89px 20px 89px;
   border: solid 1px var(--border-color);
+}
+
+.main {
+  height: 800px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .scroll {
+    height: auto;
+  }
 }

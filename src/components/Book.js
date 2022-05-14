@@ -15,10 +15,12 @@ const Book = () => {
   }, []);
 
   return (
-    <section>
-      {books.map((book) => (
-        <BookList key={book.item_id} book={book} />
-      ))}
+    <section className="main">
+      <div className="scroll">
+        {books.map((book) => (
+          <BookList key={book.item_id} book={book} />
+        ))}
+      </div>
       <hr className="divider" />
       <Form />
     </section>

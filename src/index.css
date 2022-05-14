@@ -8,7 +8,7 @@
 
 /* Variables */
 :root {
-  --background-light: #fafafa;
+  --background-light: #fffbfb;
   --accent-color: #0290ff;
   --accent-color-actions: #4386bf;
   --font: 'RobotoSlab', sans-serif;
@@ -19,10 +19,7 @@
 }
 
 body {
-  min-height: 100vh;
-  border-radius: 4px;
-  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
-  background-color: var(--background-light);
+  background: var(--white);
+  background-color: var(--white);
   font-family: var(--font);
-  transition: background ease-out 1s 0.1s;
 }

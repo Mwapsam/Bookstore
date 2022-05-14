@@ -79,6 +79,8 @@ const Form = () => {
             <option value="business">Business</option>
             <option value="fiction">Fiction</option>
             <option value="programming">Programming</option>
+            <option value="adventure">Adventure</option>
+            <option value="science">Science</option>
           </select>
           <button
             disabled={!title && !author && !category}

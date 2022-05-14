@@ -13,6 +13,8 @@ const BookList = ({ book }) => {
     dispatch(removeBook(book.item_id));
   };
 
+  const percentage = Math.floor(Math.random() * 99);
+
   return (
     <div className="book-card">
       <div className="details">
@@ -21,30 +23,32 @@ const BookList = ({ book }) => {
         <p className="author">{book.author}</p>
         <div className="actions">
           <button type="button">Comments</button>
-          <button
-            type="button"
-            onClick={handleClick}
-          >
+          <i className="small-line" />
+          <button type="button" onClick={handleClick}>
             Remove
           </button>
+          <i className="small-line" />
           <button type="button">Edit</button>
         </div>
       </div>
       <div className="progress-bar">
-        <div className="round-bar" style={{ width: 80, height: 80 }}>
+        <div className="round-bar" style={{ width: 60, height: 60 }}>
           <CircularProgressbar
-            value={64}
+            value={percentage}
             styles={buildStyles({
               pathColor: 'var(--accent-color)',
             })}
           />
         </div>
         <div className="count">
-          <p>50%</p>
+          <p>
+            {percentage}
+            %
+          </p>
           <span>Completed</span>
         </div>
+        <i className="bg-ling" />
       </div>
-
       <div className="chapter">
         <span>CURRENT CHAPTER</span>
         <p>Chapter 7</p>
@@ -55,11 +59,11 @@ const BookList = ({ book }) => {
 };
 
 BookList.propTypes = {
-  book: PropTypes.objectOf(PropTypes.any),
+  book: PropTypes.objectOf(PropTypes.string),
 };
 
 BookList.defaultProps = {
-  book: {},
+  book: PropTypes.string,
 };
 
 export default BookList;
